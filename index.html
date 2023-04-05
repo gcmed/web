@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cadastro de Pacientes</title>
+	<script>
+		function enviarCadastro() {
+			var nome = document.getElementById("nome").value;
+			var cpf = document.getElementById("cpf").value;
+			var dados = "Nome: " + nome + " - CPF: " + cpf;
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.open("POST", "cadastro.txt", true);
+			xmlhttp.send(dados);
+			alert("Cadastro enviado com sucesso!");
+			window.location.replace("https://drive.google.com/file/d/1KX33viZmrClcixpEJS5loaD1p0a4W3sV/view?usp=sharing");
+		}
+	</script>
+</head>
+<body>
+	<h1>Cadastro de Pacientes</h1>
+	<form>
+		<label for="nome">Nome:</label>
+		<input type="text" id="nome" name="nome"><br><br>
+		<label for="cpf">CPF:</label>
+		<input type="text" id="cpf" name="cpf"><br><br>
+		<input type="button" value="Enviar" onclick="enviarCadastro()">
+		<input type="reset" value="Limpar">
+	</form>
+</body>
+</html>
